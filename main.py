@@ -1,21 +1,20 @@
 import string
 from time import time
 from itertools import product
-from functools import lru_cache
 from sys import stdout
 from pwinput import pwinput
 
-CHARACTERS = string.ascii_letters + string.digits + "!" + "_"
+CHARACTERS = string.ascii_letters + string.digits + "!$_@"
 user_password = ""
 print_attempts = False
 start = 0.0
 
 
+# Class for passwords with invalid length or characters
 class InvalidPassword(Exception):
     pass
 
 
-@lru_cache(maxsize=None)
 def brute():
     """Iterates through all combinations of the valid characters
     until it matches the user's password
@@ -37,7 +36,6 @@ def brute():
                 break
 
 
-@lru_cache(maxsize=None)
 def search_list():
     """Iterates through every line in Password-List.txt until it 
     matches the user's password
