@@ -3,7 +3,6 @@ from time import time
 from itertools import product
 from sys import stdout
 from pwinput import pwinput
-import requests
 
 CHARACTERS = string.ascii_letters + string.digits + "!$_@"
 user_password = ""
@@ -38,13 +37,13 @@ def brute():
 
 
 def search_list():
-    """Iterates through every line in Password_List.txt until it 
+    """Iterates through every line in Password-List.txt until it 
     matches the user's password
     """
     global start
     start = time()
     # Access password database file
-    with open("Password_List.txt") as f:
+    with open("Password-List.txt") as f:
         print("Searching through password list...")
         # Sort through each line in the file until it matches
         for i, line in enumerate(f):
